@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .application-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #FF5722;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Prediction Result</h1>
+        <p>
+            {% if prediction == 'Accepted' %}
+                Accepted
+            {% else %}
+                Rejected
+            {% endif %}
+        </p>
+        {% if prediction == 'Accepted' %}
+            <p>Application Number:</p>
+            <p class="application-number">{{ application_number }}</p>
+        {% endif %}
+        <p>Thank you, {{ name }}, for submitting your loan application!</p>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+</body>
+</html>
